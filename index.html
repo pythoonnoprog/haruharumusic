@@ -5,7 +5,7 @@
  <body>
   <div id="lod"></div>
     <div class="topbox">
-      <img src="https://ul.h3z.jp/X6NJcwrK.png" class="logo">
+      <img src="https://ul.h3z.jp/X6NJcwrK.png" class="logo" id="logo">
       <!--<p class="cb1"></p>-->
       <div class="searchArea" id="makeImg">
         <input type="text" id="inText" class="searchText" placeholder="haruharumusicを検索">
@@ -98,6 +98,7 @@ document.body.oncontextmenu = function(){
     var img1 = document.querySelector("#acover");
     var cpg = document.querySelector("#cpg");
     var at2 = document.querySelector("#author2");
+    var logo = document.querySelector("#logo");
     var ida = location.hash.substr(1);
     if (ida == "") {
       
@@ -145,6 +146,17 @@ document.body.oncontextmenu = function(){
           pmn.innerHTML=dd[1]+"("+dd[2]+")";
         }
       });
-    
+     var ceffect = document.getElementById("inText");
+
+ceffect.addEventListener('focus', (event) => {
+  if(screen.width<800){
+  logo.style.display = 'none';
+  }
+
+});
+
+ceffect.addEventListener('blur', (event) => {
+  logo.style.display = 'block';
+});
  </script>
 </html>
