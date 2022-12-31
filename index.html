@@ -8,7 +8,7 @@
       <img src="https://ul.h3z.jp/X6NJcwrK.png" class="logo">
       <!--<p class="cb1"></p>-->
       <div class="searchArea" id="makeImg">
-        <input type="text" id="inText" class="searchText" placeholder="ここでharuharumusicを検索">
+        <input type="text" id="inText" class="searchText" placeholder="haruharumusicを検索">
         <div class="searchButton">
           <img src=" https://ul.h3z.jp/4nvH8eqy.png" class="searchImg">
         </div>
@@ -17,12 +17,19 @@
     <div class="mc">
       <div class="clm1">
       <img src="" class="ac" id="acover">
+      <div class="sityou">
+          <div class="player">
+            <p id="mname" class="pmn"></p><div id="playbutton1"><img src="https://ul.h3z.jp/yGgFafKX.png" class="ppbn"></div>
+          </div>
+      </div>
       </div>
       <div class="clm2">
         <h2 id="mtitle"></h2>
         <p id="author2"></p>
+        <small>AAC/WAV/MP3版※1</small><button style="cursor:pointer;background: coral; border-radius: 5px; border: none; color: white; padding: 10px 15px;margin: 10px;">ダウンロード➡</button>
         <div id="infobox1"></div>
         <p id="cpg"></p>
+        ※1 ダウンロード形式は作曲者及び配信者によって異なり、一部の形式では提供されていない可能性があります。
       </div>
     </div>
  </body>
@@ -134,6 +141,8 @@ document.body.oncontextmenu = function(){
           var headData = document.head.children;
           var ifb1 = document.getElementById("infobox1");
           ifb1.innerHTML="<b>info</b><br>公開開始日:"+dd[5].substr(0,16)+"(日本標準GMT+0900)~<br>distributor:"+author1;
+          var pmn = document.getElementById("mname");
+          pmn.innerHTML=dd[1]+"("+dd[2]+")";
         }
       });
     
