@@ -8,7 +8,7 @@
       <img src="https://ul.h3z.jp/X6NJcwrK.png" class="logo">
       <!--<p class="cb1"></p>-->
       <div class="searchArea" id="makeImg">
-        <input type="text" id="inText" class="searchText">
+        <input type="text" id="inText" class="searchText" placeholder="ここでharuharumusicを検索">
         <div class="searchButton">
           <img src=" https://ul.h3z.jp/4nvH8eqy.png" class="searchImg">
         </div>
@@ -20,6 +20,8 @@
       </div>
       <div class="clm2">
         <h2 id="mtitle"></h2>
+        <p id="author2"></p>
+        <div id="infobox1"></div>
         <p id="cpg"></p>
       </div>
     </div>
@@ -88,6 +90,7 @@ document.body.oncontextmenu = function(){
     var lod = document.querySelector("#lod");
     var img1 = document.querySelector("#acover");
     var cpg = document.querySelector("#cpg");
+    var at2 = document.querySelector("#author2");
     var ida = location.hash.substr(1);
     if (ida == "") {
       
@@ -119,6 +122,7 @@ document.body.oncontextmenu = function(){
           }else{
             cpg.style.display="none";
           }
+          at2.innerHTML = dd[3];
           img1.src = dd[7];
           title1.innerHTML = dd[1];
           var title = dd[1];
@@ -128,6 +132,8 @@ document.body.oncontextmenu = function(){
           var fav = document.getElementById("fav");
           fav.href = dd[7];
           var headData = document.head.children;
+          var ifb1 = document.getElementById("infobox1");
+          ifb1.innerHTML="<b>info</b><br>公開開始日:"+dd[5].substr(0,16)+"(日本標準GMT+0900)~<br>distributor:"+author1;
         }
       });
     
