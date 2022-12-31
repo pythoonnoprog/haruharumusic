@@ -1,6 +1,116 @@
 <html>
  <head>
+  <meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><meta property="og:type" content="music.song"><meta property="og:description" content=""><meta property="og:title" content=""><meta property="og:url" content=""><meta property="og:image" content=""><meta property="og:site_name" content=""><meta property="og:locale" content=""><link rel="shortcut icon" href=" " id="fav"><link rel="stylesheet" href="lib1.css"><script src="//accaii.com/gakkologin/script.js" async></script><noscript><img src="//accaii.com/gakkologin/script?guid=on"></noscript>
  </head>
  <body>
+    
  </body>
+ <script>
+   window.addEventListener('load', function(){
+window.addEventListener("blur", blur, false);
+window.addEventListener("focus", focu, false);
+});
+var ms = screen.width;
+    var mms = window.innerWidth;
+function blur(){
+  mlve();
+}
+function focu(){
+  if(ms==screen.width){
+    ment();
+  }else{
+    debugger;
+  }
+
+}
+    window.onresize = window_load;
+function window_load() {
+	 if(mms == window.innerWidth){
+       ment();
+  }else{
+    mlve();
+  }
+
+}
+function mlve(){
+  var belement = document.createElement("blank");
+  belement.id="bm";
+  document.body.appendChild(belement); 
+}
+function ment(){
+ document.getElementById("bm").remove();
+}
+window.document.onkeydown = function(event){
+  if(event.key == "F12"){
+    return false;
+  };
+  if(event.ctrlKey && event.key === "r"){
+    return false;
+  };
+  if(event.key == "F5"){
+    return false;
+  };
+  if(event.key == "K"){
+    return false;
+  };
+    if(event.key == "u"){
+    return false;
+  };
+      if(event.key == "s"){
+        mlve();
+    return false;
+  };
+  
+};
+document.body.oncontextmenu = function(){
+ return false;
+}
+    var title1 = document.querySelector("#mtitle");
+    var lod = document.querySelector("#lod");
+    var img1 = document.querySelector("#acover");
+    var cpg = document.querySelector("#cpg");
+    var ida = location.hash.substr(1);
+    if (ida == "") {
+      
+    } else {
+    }
+    var d = new Date();
+    var eei = d.getMinutes()*8383;
+    $.ajax({
+      type: "GET",
+      url: "https://script.google.com/macros/s/AKfycbwsc1r_Cth6EtETAT3Ck4Zyc62pxEGgHV_H8evSklXpvEy7oIr_KKB0S4e4khDmP6N4dA/exec",
+      data: { p1: ida , env: eei},
+       async : false
+    })
+      .done(function (data) {
+        var dd = JSON.parse(data);
+      
+      console.log(dd);
+        if (dd[1] == "MNAME(あいう)") {
+          location.href = "404";
+        } else {
+          var er = dd[2].substr(10,5);
+          var author1 = dd[5].substr(1);
+          var type1 = dd[5].substr(0,1);
+          console.log(er);
+          if(type1 == "c"){
+          cpg.innerHTML="&copy"+er+" "+author1;
+          }else if(type1 == "p"){
+          cpg.innerHTML="&#8471"+er+" "+author1;
+          }else{
+            cpg.style.display="none";
+          }
+          img1.src = dd[4];
+          title1.innerHTML = dd[1];
+          var title = dd[1];
+          var url = location.href;
+          var image = dd[4];
+          document.title = title;
+          var fav = document.getElementById("fav");
+          fav.href = dd[4];
+          var headData = document.head.children;
+        }
+      });
+    
+ </script>
 </html>
