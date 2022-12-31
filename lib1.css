@@ -1,0 +1,79 @@
+.topbox{
+position:absolute;
+top:0;left:0;
+width:100%;
+height:100px;
+display:flex;
+box-shadow: 0px 2px 2px 0px gainsboro, inset 0px -1px 6px -2px cadetblue;
+}
+.logo{
+   margin-left:15px;
+   cursor: pointer;
+}
+.cb1{
+   
+}
+.mc{
+    margin-top:110px;
+    display:flex;
+}
+.clm1{
+    width:20vw;
+    padding:20px;
+}
+.ac{
+    width:100%;
+}
+.searchArea{
+    width          : 30vw;  
+    height         : 32px; 
+    margin-top     : 25px;    
+    margin-left    : 65px;
+    letter-spacing : 0.1em;              /* 文字間隔              */
+    font-weight    : bold;               /* 太字                  */
+    line-height    : 0;                  /* 標準の行高さ          */
+  }
+   
+   /* --- テキスト入力欄のSTYLE設定 --- */
+  .searchArea .searchText {
+    display        : block;              /* ブロック化            */
+    float          : left;               /* 横並び                */
+    box-sizing     : border-box;         /* 枠線,余白を含んだ長さ */
+    height         : 45px;               /* 入力の高さ            */
+    width          : 80%;              /* 入力の幅              */
+    margin         : 0;                  /* 外余白                */
+    padding        : 10px;             /* 内余白                */
+    border         : 2px solid #999999;  /* 枠線　幅,実践,色      */
+    border-radius  : 4px 0 0 4px;      /* 左上下の角丸          */
+    color          : #333;               /* 文字色                */
+    outline        : 0;                  /* 入力の薄い枠を非表示  */
+    font-size      : 20px;               /* フォントサイズ        */
+  }
+  .searchArea .searchButton {
+    float          : left;               /* 横並び                */
+    box-sizing     : border-box;         /* 枠線,余白を含んだ長さ */
+    height         : 45px;               /* 入力の高さ            */
+    margin         : 0;                  /* 外余白                */
+    padding        : 10px;           /* 内余白                */
+    border         : none;               /* 枠線　幅,実践,色      */
+    border-radius  : 0 4px 4px 0;      /* 右上下の角丸          */
+    background     : #999999;            /* ボタンの色            */
+    color          : #fff;               /* 文字色                */
+    cursor         : pointer;            /* カーソル設定          */
+    line-height    : 20px;               /* 1行の高さ             */
+    font-size      : 20px;               /* フォントサイズ        */
+  }
+   
+
+  
+  .searchArea .searchImg {
+    display        : inline-block;       /* インラインブロック化  */
+    width          : auto;               /* 幅は高さに合わせる    */
+    height         : 20px;               /* 画像の高さ            */
+    margin         : 0 3px 0 0;          /* 余白                  */
+    vertical-align : middle;             /* 横の文字位置          */
+  }
+   
+  .searchArea .searchText::-ms-clear {
+    display        : none;               /* ×を消す              */
+  }

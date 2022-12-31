@@ -3,8 +3,25 @@
   <meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><meta property="og:type" content="music.song"><meta property="og:description" content=""><meta property="og:title" content=""><meta property="og:url" content=""><meta property="og:image" content=""><meta property="og:site_name" content=""><meta property="og:locale" content=""><link rel="shortcut icon" href=" " id="fav"><link rel="stylesheet" href="lib1.css"><script src="//accaii.com/gakkologin/script.js" async></script><noscript><img src="//accaii.com/gakkologin/script?guid=on"></noscript>
  </head>
  <body>
-    <div>
-      <img src="https://ul.h3z.jp/X6NJcwrK.png">
+  <div id="lod"></div>
+    <div class="topbox">
+      <img src="https://ul.h3z.jp/X6NJcwrK.png" class="logo">
+      <!--<p class="cb1"></p>-->
+      <div class="searchArea" id="makeImg">
+        <input type="text" id="inText" class="searchText">
+        <div class="searchButton">
+          <img src=" https://ul.h3z.jp/4nvH8eqy.png" class="searchImg">
+        </div>
+      </div>
+    </div>
+    <div class="mc">
+      <div class="clm1">
+      <img src="" class="ac" id="acover">
+      </div>
+      <div class="clm2">
+        <h2 id="mtitle"></h2>
+        <p id="cpg"></p>
+      </div>
     </div>
  </body>
  <script>
@@ -41,7 +58,7 @@ function mlve(){
 }
 function ment(){
  document.getElementById("bm").remove();
-}
+}  
 window.document.onkeydown = function(event){
   if(event.key == "F12"){
     return false;
@@ -88,12 +105,12 @@ document.body.oncontextmenu = function(){
         var dd = JSON.parse(data);
       
       console.log(dd);
-        if (dd[1] == "MNAME(あいう)") {
+        if (dd[0] == "URLID") {
           location.href = "404";
         } else {
           var er = dd[2].substr(10,5);
-          var author1 = dd[5].substr(1);
-          var type1 = dd[5].substr(0,1);
+          var author1 = dd[6].substr(1);
+          var type1 = dd[6].substr(0,1);
           console.log(er);
           if(type1 == "c"){
           cpg.innerHTML="&copy"+er+" "+author1;
@@ -102,14 +119,14 @@ document.body.oncontextmenu = function(){
           }else{
             cpg.style.display="none";
           }
-          img1.src = dd[4];
+          img1.src = dd[7];
           title1.innerHTML = dd[1];
           var title = dd[1];
           var url = location.href;
-          var image = dd[4];
-          document.title = title;
+          var image = dd[7];
+          document.title = title+" - haruharumusic.f5.si はるはるミュージック";
           var fav = document.getElementById("fav");
-          fav.href = dd[4];
+          fav.href = dd[7];
           var headData = document.head.children;
         }
       });
