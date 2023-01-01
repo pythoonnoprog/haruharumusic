@@ -51,10 +51,12 @@ box-shadow: 0px 2px 2px 0px gainsboro, inset 0px -1px 6px -2px cadetblue;
     width:100%;
 }
 .searchArea{
+    position:relative;
+    z-index: 1000;
     width          : 30vw;  
-    height         : 32px; 
+    height         : auto; 
     margin-top     : 25px;    
-    margin-left    : 65px;
+    margin-left    : 64px;
     letter-spacing : 0.1em;              /* 文字間隔              */
     font-weight    : bold;               /* 太字                  */
     line-height    : 0;                  /* 標準の行高さ          */
@@ -117,25 +119,23 @@ box-shadow: 0px 2px 2px 0px gainsboro, inset 0px -1px 6px -2px cadetblue;
 
   @media screen and (max-width:800px){
     .clm1,.clm2{
-        width: 100%;
+        width: 88%;
     }
     .mc{
         display:block;
+    }
+    .searchArea{
+        margin-left:10px;
     }
     .searchArea .searchText{
         width:0%;
     }
     .searchText:focus{
-        width: 80%;  
+        width:80%;
+        margin-left:5%;
     }
     .searchArea{
-        width          : 90%;  
-        height         : 32px; 
-        margin-top     : 25px;    
-        margin-left    : 8%;
-        letter-spacing : 0.1em;              /* 文字間隔              */
-        font-weight    : bold;               /* 太字                  */
-        line-height    : 0;                  /* 標準の行高さ          */
+        width:90%;
       }
       topbox{
         width:100%;
